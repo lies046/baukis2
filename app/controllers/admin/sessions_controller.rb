@@ -1,6 +1,6 @@
 class Admin::SessionsController < Admin::Base
   def new
-    if current_staff_member
+    if current_administrator
       redirect_to :admin_root
     else
       @form = Admin::LoginForm.new
@@ -11,7 +11,7 @@ class Admin::SessionsController < Admin::Base
   def create
     @form = Admin::LoginForm.new(params[:admin_login_form])
     if @form.email.present?
-      administrator = Admin.find_by("LOWER(email) = ? ", @form.email.downcase)
+      administrator = Administrator.find_by("LOWER(email) = ? ", @form.email.downcase)
     end
 
     if Admin::Authenticator.new(administrator).authenticate(@form.password)
@@ -19,7 +19,7 @@ class Admin::SessionsController < Admin::Base
         flash.now.alert = "アカウントが停止されています。"
         render action: "new"
       else
-        session[:administrator] = administrator.id
+        session[:administrator_id] = administrator.id
         flash.notice = "ログインしました。"
         redirect_to :admin_root
       end

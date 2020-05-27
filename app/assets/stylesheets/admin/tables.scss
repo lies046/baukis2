@@ -1,0 +1,35 @@
+@import "colors";
+
+.table-wrapper{
+  width: 90%;
+  margin: 0 auto;
+
+  .links{
+    text-align: right;
+    padding: 10px;
+  }
+
+  table{
+    margin: 10px auto 0;
+    border: solid 10px $very_dark_magenta;
+    tr{
+      th{
+        background-color: $dark_gray;
+        color: $very_light_gray;
+      }
+      th, td{ padding: "5px";}
+      td.email, td.date{font-family: monospace;}
+      td.boolean{text-align: center;}
+      td.actions{
+        text-align: center;
+        color: $dark_gray;
+      }
+    }
+  }
+
+  table.listing{
+    width: 100%;
+    tr:nth-child(even) {background-color: $very_light_gray;}
+    tr:nth-child(odd) {background-color: $light_gray;}
+  }
+}

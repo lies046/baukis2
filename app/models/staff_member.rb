@@ -1,5 +1,6 @@
 class StaffMember < ApplicationRecord
   before_save { self.email = email.downcase }
+  has_many :events, class_name: "StaffEvent", dependent: :destroy
 
   def password=(raw_password)
     if raw_password.kind_of?(String)

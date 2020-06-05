@@ -23,6 +23,9 @@
             color: $red;
           }
         }
+        div.input-block{
+          input{margin-right: 10px;}
+        }
         .notes{
           text-align: right;
           font-size: 5px;

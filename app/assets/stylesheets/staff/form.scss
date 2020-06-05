@@ -22,6 +22,9 @@
             padding-left: 5px;
             color: $red;
           }
+          div.input-block{
+            input{margin-right: 10px;}
+          }
         }
         .notes{
           text-align: right;
@@ -44,6 +47,11 @@
           padding: 0;
           label {color: $red;}
           input {background-color: $pink;}
+        }
+        div.error-message{
+          color: $red;
+          font-size: 5px;
+          padding: 0 5px;
         }
       }
     }

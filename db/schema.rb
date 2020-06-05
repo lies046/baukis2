@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_05_071217) do
+ActiveRecord::Schema.define(version: 2020_06_05_081600) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "customer_id", null: false
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_06_05_071217) do
     t.string "company_name", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "division_name", default: "", null: false
     t.index ["customer_id"], name: "index_addresses_on_customer_id"
     t.index ["type", "customer_id"], name: "index_addresses_on_type_and_customer_id", unique: true
   end

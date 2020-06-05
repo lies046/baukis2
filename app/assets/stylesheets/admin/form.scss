@@ -48,6 +48,11 @@
           label{color: $red;}
           input{background-color: $pink;}
         }
+        div.error-message{
+          color: $red;
+          font-size: 10px;
+          padding: 0 20px;
+        }
       }
     }
   }
